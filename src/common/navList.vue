@@ -53,7 +53,9 @@ export default {
     font-style: normal;
     font-size: 48px;
   }
-
+  .nav ul li span{
+    font-size: 20px;
+  }
   .router-link-active  {
     color: #FF483E;
   }
