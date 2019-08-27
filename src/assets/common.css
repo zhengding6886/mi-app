@@ -1,0 +1,30 @@
+/* 字体图标 */
+@font-face {
+  font-family: 'myfont';
+  src: url('../fonts/iconfont.eot') format('embedded-opentype'),
+       url('../fonts/iconfont.svg') format('svg'),
+       url('../fonts/iconfont.woff') format('woff'),
+       url('../fonts/iconfont.ttf') format('truetype');
+}
+[class^='iconfont'],[class*=' iconfont'] {
+  font-family: 'myfont'
+}
+
+.icon-yemian::before {
+  content: '\e602'
+}
+
+.icon-fenlei::before {
+  content: '\e601'
+}
+
+.icon-baobao::before {
+  content: '\e61e'
+}
+
+.icon-che::before {
+  content: '\e600';
+}
+.icon-icon_mine::before {
+  content: '\e603';
+}
