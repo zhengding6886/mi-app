@@ -28,12 +28,11 @@ export default {
     }
   }
 }
-</script>></s>
+</script>
 <style scoped>
     div{
       width: 100%;
       height:320px;
-      /* background:red; */
     }
     div ul {
         width:100%;
@@ -41,11 +40,8 @@ export default {
         flex-wrap: wrap;
     }
     div ul li {
-      width: 20%;
       list-style: none;
-      flex:1;
-
-     
+      flex:1;  
     }
     div ul li img{
       width:150px;
