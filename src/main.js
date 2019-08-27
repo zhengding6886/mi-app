@@ -3,13 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+import 'lib-flexible'
 Vue.config.productionTip = false
-
+Vue.use(MintUI)
 /* eslint-disable no-new */
+// 路由全局守卫函数
+router.beforeEach((to, from, next) => {
+  // console.log(to.meta.title)
+  document.title = to.meta.title
+  next()
+})
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
