@@ -27,7 +27,7 @@ export default new Router({
     name: 'Category',
     component: Category,
     meta: {
-      cache: false,
+      cache: true,
       title: '分类'
     }
   },
@@ -36,7 +36,7 @@ export default new Router({
     name: 'Cart',
     component: Cart,
     meta: {
-      cache: false,
+      cache: true,
       title: '购物车'
     }
   },
@@ -45,7 +45,7 @@ export default new Router({
     name: 'Mine',
     component: Mine,
     meta: {
-      cache: false,
+      cache: true,
       title: '我的'
     }
   }
