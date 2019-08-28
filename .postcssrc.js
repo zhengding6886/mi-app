@@ -10,6 +10,5 @@ module.exports = {
         remUnit: 75,
         exclude: /node_modules/
       }
-    }
   }
-  
+}

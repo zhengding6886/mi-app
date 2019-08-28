@@ -9,7 +9,6 @@
 [class^='iconfont'],[class*=' iconfont'] {
   font-family: 'myfont'
 }
-
 .icon-shixinyuan:before {
     content: "\e62c";
   }
@@ -30,8 +29,16 @@
     content: "\e660";
   }
   
+  .icon-shouye:before {
+    content: "\e61b";
+  }
+  
   .icon-sousuo:before {
     content: "\e819";
+  }
+  
+  .icon-gouwuche:before {
+    content: "\e643";
   }
   
   .icon-zelvxuanzefeiyongdaosanjiaoxingfandui:before {
@@ -42,8 +49,16 @@
     content: "\e633";
   }
   
+  .icon-gouwuche1:before {
+    content: "\e621";
+  }
+  
   .icon-erweima:before {
     content: "\e67a";
+  }
+  
+  .icon-shouye1:before {
+    content: "\e653";
   }
   
   .icon-xinxi:before {
@@ -62,8 +77,20 @@
     content: "\e614";
   }
   
+  .icon-shouye2:before {
+    content: "\e6c9";
+  }
+  
+  .icon-shouye3:before {
+    content: "\e630";
+  }
+  
   .icon-jiantouxia:before {
     content: "\e62d";
+  }
+  
+  .icon-fenlei:before {
+    content: "\e605";
   }
   
   .icon-zuo-copy:before {
@@ -72,6 +99,10 @@
   
   .icon-zuoyoujiantou-2-copy:before {
     content: "\e600";
+  }
+  
+  .icon-fenlei1:before {
+    content: "\e71b";
   }
   
   .icon-sousuo3:before {
@@ -98,6 +129,10 @@
     content: "\e61e";
   }
   
+  .icon-gouwuche2:before {
+    content: "\e690";
+  }
+  
   .icon-shouji:before {
     content: "\e619";
   }
@@ -109,5 +144,4 @@
   .icon-yonghu:before {
     content: "\e667";
   }
-  
   

@@ -1,20 +1,18 @@
 <template>
-  <div class="home">
-    <!-- 搜索框 -->
+  <div id="app">
     <toTop></toTop>
-    <div v-for="(item, index) in num" :key="index">
-      <p>{{item}}</p>
-    </div>
+    <navList></navList>
+    <transition name="slide-fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 <script>
 import toTop from '@/common/toTop.vue'
-// import Myswiper from './components/myswiper.vue'
-// import CateList from './components/cateList.vue'
-// import Pin from './components/pinpai.vue'
-// import Miaosha from './components/miaosha.vue'
+import navList from './nav/navlist'
 export default {
   components: {
+    navList,
     toTop
   },
   data () {
@@ -24,12 +22,21 @@ export default {
   }
 }
 </script>
-<style scoped>
+
+<style   scoped>
 .home {
   background: rgba(255, 132, 125, 0.5);
   padding-bottom: 110px;
 }
 .banner {
   width: 100%;
+}
+.slide-fade-enter-active,.slide-fade-leave-active{
+  transition: all 1s ease;
+  opacity: 0;
+}
+.slide-fade-enter,.slide-fade-leave-to{
+  opacity: 1;
+  transform: translateX(50%);
 }
 </style>
