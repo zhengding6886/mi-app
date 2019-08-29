@@ -35,5 +35,7 @@ body {
 #app {
     height: 100%;
 }
-
+.mint-swipe-indicators .is-active{
+ opacity: 0.8;
+}
 </style>

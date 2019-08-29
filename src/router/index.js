@@ -12,6 +12,7 @@ import Book from '@/components/home/nav/components/book'
 import HouseElectric from '@/components/home/nav/components/House_Electric'
 import FiveG from '@/components/home/nav/components/5g'
 import Round from '@/components/home/nav/components/round'
+import detail from '@/common/detail'
 
 Vue.use(Router)
 
@@ -111,6 +112,11 @@ export default new Router({
       cache: true,
       title: '我的'
     }
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: detail
   }
   ]
 })
