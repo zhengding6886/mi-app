@@ -1,3 +1,20 @@
 <template>
-  <div>购物车</div>
+  <div class="cart">
+    <Header ref="son"></Header>
+
+  </div>
 </template>
+<script>
+import Header from '@/common/header.vue'
+
+export default {
+  mounted () {
+    this.$refs.son.title = '购物车'
+  },
+  components: {
+    Header
+  }
+}
+</script>
+<style scoped>
+</style>

@@ -2,19 +2,19 @@
   <div class="nav">
     <ul>
       <router-link to="/home" tag="li">
-        <i class="iconfont icon-yemian"></i>
+        <i class="iconfont icon-shouye1"></i>
         <span>首页</span>
       </router-link>
       <router-link to="/category" tag="li">
-        <i class="iconfont icon-fenlei"></i>
+        <i class="iconfont icon-caidan1"></i>
         <span>分类</span>
       </router-link>
       <router-link to="/cart" tag="li">
-        <i class="iconfont icon-che"></i>
+        <i class="iconfont icon-gouwuche2"></i>
         <span>购物车</span>
       </router-link>
       <router-link to="/mine" tag="li">
-        <i class="iconfont icon-icon_mine"></i>
+        <i class="iconfont icon-yonghu"></i>
         <span>我的</span>
       </router-link>
 
@@ -53,8 +53,10 @@ export default {
     font-style: normal;
     font-size: 48px;
   }
-
+  .nav ul li span{
+    font-size: 20px;
+  }
   .router-link-active  {
-    color: #FF483E;
+    color: rgba(237,91,0);
   }
 </style>
