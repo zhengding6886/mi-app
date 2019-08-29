@@ -2,7 +2,7 @@
   <div class="recommend">
     <!-- 轮播图 -->
     <div class="swipe">
-      <mt-swipe :auto="3000" :continuous="true">
+      <mt-swipe :auto="3000" :continuous="true" >
         <mt-swipe-item v-for="(item,index) in swiperArr" :key="index">
           <img  :src="item.img" alt />
         </mt-swipe-item>
@@ -22,7 +22,7 @@
     <!-- 商品列表 -->
     <div class="list_one">
       <div class="brand">
-        <img :src="phonelist1.titleImg" alt />
+        <img :src="phonelist1.titleImg" alt="11" />
         <div class="pro_info">
           <p>
             <span class="title">{{phonelist1.name}}</span>
@@ -149,14 +149,15 @@ export default {
 }
 .swipe{
   width: 100%;
-  height: 375px;
+  height: auto;
   background: #fff;
 }
 .mint-swipe{
- height: 375px;
+   height: 375px;
+   width: 100%;
 }
 .mint-swipe img{
-  width: 100%;
+   width: 100%;
 }
 .catelist {
   width: 100%;
@@ -226,7 +227,7 @@ export default {
   color: rgba(0, 0, 0, 0.54);
 }
 .list_one .pro_info .buy_now {
-  display: inline-block;
+  display: block;
   width: 208px;
   height: 60px;
   line-height: 60px;

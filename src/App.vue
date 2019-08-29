@@ -1,17 +1,16 @@
 
 <template>
-    <div id="app">
-
-        <Nav-list></Nav-list>
-        <transition name="fade">
-            <keep-alive>
-              <router-view v-if="this.$route.meta.cache" />
-            </keep-alive>
-        </transition>
-        <transition name="fade">
-            <router-view v-if="!this.$route.meta.cache" />
-        </transition>
-    </div>
+  <div id="app">
+    <Nav-list></Nav-list>
+    <transition name="fade">
+      <keep-alive>
+        <router-view v-if="this.$route.meta.cache" />
+      </keep-alive>
+    </transition>
+    <transition name="fade">
+      <router-view v-if="!this.$route.meta.cache" />
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -27,13 +26,11 @@ export default {
 <style>
 @import url("./assets/reset.css");
 @import url("./assets/common.css");
-html,
-body {
-    height: 100%;
-}
 
 #app {
-    height: 100%;
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
 }
-
 </style>

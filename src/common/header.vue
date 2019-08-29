@@ -3,7 +3,7 @@
     <div class="left" @click="goback">
       <i class="iconfont icon-xiangzuojiantou"></i>
     </div>
-    <center>{{title}}</center>
+    <div class="title">{{title}}</div>
     <div class="right">
       <router-link to="/search">
         <i class="iconfont icon-sousuo"></i>
@@ -37,18 +37,25 @@ export default {
   align-items: center;
   .left {
     float: left;
-    width: 50px;
+    width: 15%;
     height: 50px;
+    text-align: center;
   }
   .right {
     float: right;
-    width: 50px;
+    width: 15%;
     height: 50px;
+    text-align: center;
   }
   i {
     color: #666;
     font-style: normal;
     font-size: 48px;
+  }
+  .title{
+    width: 70%;
+    font-size: 36px;
+    text-align: center;
   }
 }
 </style>

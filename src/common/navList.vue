@@ -17,46 +17,45 @@
         <i class="iconfont icon-yonghu"></i>
         <span>我的</span>
       </router-link>
-
     </ul>
   </div>
 </template>
 <script>
-export default {
-
-}
+export default {}
 </script>
 <style scoped>
-  .nav {
-    position: fixed;
-    z-index: 999;
-    background: white;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
+.nav {
+  position: fixed;
+  z-index: 999;
+  background: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #999;
+}
 
-  .nav ul {
-    display: flex;
-  }
+.nav ul {
+  width: 100%;
+  display: flex;
+}
 
-  .nav ul li {
-    flex: 1;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.nav ul li {
+  flex: 1;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .nav ul li i {
-    font-style: normal;
-    font-size: 48px;
-  }
-  .nav ul li span{
-    font-size: 20px;
-  }
-  .router-link-active  {
-    color: rgba(237,91,0);
-  }
+.nav ul li i {
+  font-style: normal;
+  font-size: 48px;
+}
+.nav ul li span {
+  font-size: 20px;
+}
+.router-link-active {
+  color: rgba(237, 91, 0);
+}
 </style>

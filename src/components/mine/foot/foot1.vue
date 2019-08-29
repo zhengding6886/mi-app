@@ -1,8 +1,24 @@
 <template>
   <div class="foot">
     <ul>
-       <router-link to="/" tag="li"><i></i><p class="p1">会员中心<span>></span></p></router-link>
-       <router-link to="/" tag="li"><i></i><p>我的优惠<span>></span></p></router-link>
+      <router-link to="/" tag="li">
+        <span class="s-left s-huiyuan">
+          <i class="iconfont icon-huangguan"></i>
+        </span>
+        <span class="s-right">
+          会员中心
+          <i class="iconfont icon-xiangyoujiantou"></i>
+        </span>
+      </router-link>
+      <router-link to="/" tag="li">
+        <span class="s-left s-youhui">
+          <i class="iconfont icon-qianbao"></i>
+        </span>
+        <span class="s-right">
+          我的优惠
+          <i class="iconfont icon-xiangyoujiantou"></i>
+        </span>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -12,31 +28,48 @@ export default {
 }
 </script>
 <style scoped>
-    div{
-        margin-top:30px;
-    }
-     div ul li{
-         width:100%;
-         height:100px;
-         background:#fff;
-         font-size:30px;
-         line-height:100px;
-         position: relative;
-     }
-      div ul li p{
-          padding-right:20px;
-          box-sizing: border-box;
-          width:80%;
-          float: right;
-      }
-      div ul li p.p1{
-          border-bottom: 1px solid #000;
-      }
-      div ul li span{
-          position: absolute;
-          font-size: 45px;
-          right:40px;
-          font-weight: 100;
-          color:#333;
-      }
+div {
+  margin-top: 30px;
+}
+div ul li {
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  font-size: 30px;
+  line-height: 100px;
+  position: relative;
+}
+div ul li i {
+  height: 100px;
+  line-height: 100px;
+}
+div ul li .s-left {
+  display: block;
+  float: left;
+  width: 15%;
+  height: 100px;
+  text-align: center;
+  font-size: 48px;
+}
+div ul li .s-right {
+  float: left;
+  display: block;
+  width: 85%;
+  height: 100px;
+}
+div ul li .s-right i {
+  display: block;
+  float: right;
+  width: 20%;
+  text-align: center;
+}
+div ul li:nth-child(1) .s-right  {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+}
+.s-huiyuan i{
+    color: #FDBF2D;
+}
+.s-youhui i{
+    color: #51BBE0;
+}
 </style>

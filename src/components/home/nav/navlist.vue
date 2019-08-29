@@ -32,6 +32,7 @@ export default {
   position: relative;
   background: #f2f2f2;
   border-bottom: 1px solid #666;
+  color: #747474;
 }
 .nav .all{
   padding-left: 30px;

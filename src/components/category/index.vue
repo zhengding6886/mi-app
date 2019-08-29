@@ -147,6 +147,9 @@ export default {
 }
 </script>
 <style scoped>
+.category{
+   width: 100%;
+}
 .search {
   width: 100%;
   height: 100%;
@@ -158,10 +161,10 @@ export default {
   position: absolute;
   top:80px;
   bottom: 110px;
-  width: 100%;
   overflow: hidden;
 }
 .menu-wrapper {
+  width: 100%;
   background-color: #fafafa;
   width: 150px;
   flex: 0 0 150px;
@@ -191,7 +194,7 @@ export default {
   right: 0;
 }
 .shop-wrapper {
-  flex: 1;
+  width: 600px;
   background: #fff;
 }
 .shops-title {
@@ -210,13 +213,14 @@ export default {
   flex-wrap: wrap;
 }
 .shop-wrapper {
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 .shops-li {
   padding-bottom: 30px
 }
+
 .itemList-img {
-  height: 200px
+  height: 200px;
 }
 .itemList-img img {
   width: 100%;
