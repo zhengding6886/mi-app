@@ -4,6 +4,9 @@ import Home from '@/components/home/index.vue'
 import Category from '@/components/category/index.vue'
 import Cart from '@/components/cart/index.vue'
 import Mine from '@/components/mine/index.vue'
+import Search from '@/components/search/index.vue'
+import Login from '@/components/user/login.vue'
+import Register from '@/components/user/register.vue'
 import Recommend from '@/components/home/nav/components/recommend'
 import Telephone from '@/components/home/nav/components/telephone'
 import Intellect from '@/components/home/nav/components/intellect'
@@ -110,6 +113,31 @@ export default new Router({
     meta: {
       cache: true,
       title: '我的'
+    }
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search,
+    meta: {
+      cache: false,
+      title: '搜索'
+    }
+  }, {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: {
+      cache: false,
+      title: '登录'
+    }
+  }, {
+    path: '/register',
+    name: 'Register',
+    component: Register,
+    meta: {
+      cache: false,
+      title: '注册'
     }
   }
   ]

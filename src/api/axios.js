@@ -9,3 +9,6 @@ axios.interceptors.response.use(response => {
 export function getTelephone () {
   return axios.get('telephone')
 }
+export function getList () {
+  return axios.get('list')
+}

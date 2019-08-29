@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <mt-swipe :auto="3000" :continuous="true">
-      <mt-swipe-item v-for="(item,index) in swiperArr" :key="index">
-        <img :src="item.img" alt />
-      </mt-swipe-item>
-    </mt-swipe>
+  <div class="recommend">
+    <!-- 轮播图 -->
+    <div class="swipe">
+      <mt-swipe :auto="3000" :continuous="true">
+        <mt-swipe-item v-for="(item,index) in swiperArr" :key="index">
+          <img  :src="item.img" alt />
+        </mt-swipe-item>
+      </mt-swipe>
+    </div>
 
+    <!-- 社区列表 -->
     <div class="catelist">
       <ul>
         <li v-for="(item,i) in arr" :key="i">
@@ -15,12 +19,56 @@
         </li>
       </ul>
     </div>
+    <!-- 商品列表 -->
+    <div class="list_one">
+      <div class="brand">
+        <img :src="phonelist1.titleImg" alt />
+        <div class="pro_info">
+          <p>
+            <span class="title">{{phonelist1.name}}</span>
+            <span class="right">
+              ￥
+              <span class="newPrice">{{phonelist1.newprice}}</span>
+              <span class="oldPrice">￥{{phonelist1.oldprice}}</span>
+            </span>
+          </p>
+          <div class="describe">
+            <span class="detail">{{phonelist1.describe}}</span>
+            <a href="javascript:void(0);" class="buy_now">立即购买</a>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+        <ul>
+          <li v-for="(item,index) in phonelist1.result" :key="index">
+            <img  v-lazy="item.img" alt />
+            <div class="info">
+              <p class="title">{{item.name}}</p>
+              <p class="describe">{{item.describe}}</p>
+              <p class="price">
+                ￥
+                <span class="newprice">{{item.newprice}}</span>
+                <span class="oldprice">{{item.oldprice}}</span>
+              </p>
+              <a href="javascript:void(0);" class="buy_now">立即购买</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 <script>
+import { getTelephone } from '@/api/axios'
 export default {
+  created () {
+    getTelephone().then(res => {
+      this.phonelist1 = res.data
+    })
+  },
   data () {
     return {
+      phonelist1: [],
       swiperArr: [
         {
           id: 1,
@@ -95,27 +143,142 @@ export default {
 }
 </script>
 <style   scoped>
-div {
+.recommend {
+  min-height: 500px;
+  background: rgb(230, 231, 251);
+}
+.swipe{
+  width: 100%;
+  height: 375px;
+  background: #fff;
+}
+.mint-swipe{
+ height: 375px;
+}
+.mint-swipe img{
+  width: 100%;
+}
+.catelist {
   width: 100%;
   height: 320px;
-  background: pink;
+  background: #fff;
 }
-div img {
+.catelist img {
   width: 100%;
   height: 320px;
 }
 
-div ul {
+.catelist ul {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
-div ul li {
+.catelist ul li {
   list-style: none;
   flex: 1;
 }
-div ul li img {
+.catelist ul li img {
   width: 150px;
   height: 160px;
+}
+.list_one {
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.list_one .brand {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.list_one .brand img {
+  width: 100%;
+}
+.list_one .brand .pro_info {
+  background: #fff;
+  padding: 20px 28px;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+.list_one .pro_info .title {
+  font-size: 32px;
+}
+.list_one .right {
+  float: right;
+  font-size: 28px;
+  color: #ea625b;
+}
+.list_one .pro_info .right .newPrice {
+  font-size: 32px;
+  margin-right: 10px;
+}
+.list_one .pro_info .right .oldPrice {
+  font-size: 24px;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.54);
+}
+.list_one .pro_info .describe {
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.list_one .pro_info .detail {
+  line-height: 30px;
+  display: inline-block;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.list_one .pro_info .buy_now {
+  display: inline-block;
+  width: 208px;
+  height: 60px;
+  line-height: 60px;
+  background: #ea625b;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 6px;
+  float: right;
+}
+
+.list_one .list {
+  width: 100%;
+}
+.list_one .list ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.list_one .list ul li {
+  width: 48%;
+  margin-bottom: 20px;
+}
+.list_one .list ul li img {
+  width: 100%;
+}
+.list_one .list ul li .info {
+  background: #fff;
+  text-align: center;
+}
+.list_one .list ul li .info .title {
+  font-size: 30px;
+  line-height: 50px;
+}
+.list_one .list ul li .info .describe {
+  line-height: 30px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.54);
+}
+.list_one .list ul li .info .price {
+  font-size: 28px;
+  color: #ea625b;
+}
+.list_one .list ul li .info .price .newprice {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.list_one .list ul li .info .price .oldprice {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.54);
 }
 </style>

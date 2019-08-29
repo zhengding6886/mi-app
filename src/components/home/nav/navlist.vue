@@ -1,9 +1,9 @@
 <template>
   <div class="nav">
-    <div class="all">全部</div>
+
     <div class='left'>
       <ul>
-        <router-link tag='li' to='/home/recommend' class="router-link-active">推荐</router-link>
+        <router-link tag='li' to='/home/recommend' >推荐</router-link>
         <router-link tag='li' to='/home/telephone'>手机</router-link>
         <router-link tag='li' to='/home/intellect'>智能</router-link>
         <router-link tag='li' to='/home/television'>电视</router-link>
@@ -30,7 +30,6 @@ export default {
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin-top: 80px;
   background: #f2f2f2;
   border-bottom: 1px solid #666;
 }

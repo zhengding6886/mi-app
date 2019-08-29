@@ -5,7 +5,9 @@
     </div>
     <center>{{title}}</center>
     <div class="right">
-      <i class="iconfont icon-sousuo"></i>
+      <router-link to="/search">
+        <i class="iconfont icon-sousuo"></i>
+      </router-link>
     </div>
   </div>
 </template>
