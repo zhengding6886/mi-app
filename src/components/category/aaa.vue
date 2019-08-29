@@ -20,18 +20,14 @@
       <!-- 右边 -->
       <div class="shop-wrapper">
         <ul ref="itemList">
-
           <li class="shops-li" v-for="(right, index1) in searchgoods" :key="index1">
-
             <div v-for="(items,index) in right.info" :key="index">
-
-             <div class="itemList-img">
+              <div class="itemList-img">
                 <img :src="items.title_img" alt />
               </div>
               <div class="itemList-title">
                 <span>{{ items.title }}</span>
               </div>
-
               <div class="item-list">
                 <ul class="clearfix">
                   <li v-for="(item, index) in items.list" :key="index">
@@ -42,12 +38,9 @@
                   </li>
                 </ul>
               </div>
-
             </div>
-
             <div class="more">查看更多</div>
           </li>
-
         </ul>
       </div>
     </div>
@@ -57,7 +50,6 @@
 <script>
 import Header from '@/common/header.vue'
 import BScroll from 'better-scroll'
-import {getList} from '@/api/axios'
 export default {
   name: 'chat',
   components: {
@@ -71,9 +63,8 @@ export default {
     }
   },
   created () {
-    getList().then(res => {
-      this.searchgoods = res.data
-    })
+    // this.$store.commit('footerShow',true)
+    // this.$store.commit('headerShow',{header:true,slot:'分类'})
   },
   computed: {
     // 动态绑定class类名
@@ -87,6 +78,7 @@ export default {
   },
   mounted () {
     this.$refs.son.title = '分类'
+    this.getList()
   },
 
   watch: {
@@ -101,7 +93,14 @@ export default {
     }
   },
   methods: {
-
+    getList () {
+      this.$http.get('https://shiyaming1994.github.io/mi/static/data.json')
+        .then(res => {
+          this.searchgoods = res.data
+        }).catch(function (error) {
+          console.log('error init.' + error)
+        })
+    },
     _initBScroll () {
       // 左边滚动
       this.leftBscroll = new BScroll('.menu-wrapper', { click: true, tap: true })
@@ -156,37 +155,37 @@ export default {
 .shop {
   display: flex;
   position: absolute;
-  top:80px;
-  bottom: 110px;
+  top: 1rem;
+  bottom: 1rem;
   width: 100%;
   overflow: hidden;
 }
 .menu-wrapper {
   background-color: #fafafa;
-  width: 150px;
-  flex: 0 0 150px;
+  width: 1.8rem;
+  flex: 0 0 1.8rem;
 }
 .menu-item {
   width: 100%;
-  height: 90px;
-  line-height: 90px;
+  height: 1rem;
+  line-height: 1rem;
   background: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: lighter;
-  color: #3c3c3c;
+  color: #666;
   position: relative;
 }
 .current {
-  color: #fb7d34;
+  color: #e02e24;
   background: #ffffff;
 }
 .current::before {
   content: "";
-  background-color: #fb7d34;
+  background-color: #e02e24;
   width: 4px;
-  height: 90px;
+  height: 1rem;
   position: absolute;
   right: 0;
 }
@@ -210,23 +209,23 @@ export default {
   flex-wrap: wrap;
 }
 .shop-wrapper {
-  padding: 0 20px;
+  padding: 0 0.3rem;
 }
 .shops-li {
-  padding-bottom: 30px
+  /* padding-bottom: .15rem; */
 }
 .itemList-img {
-  height: 200px
+  height: 2.05rem;
 }
 .itemList-img img {
   width: 100%;
 }
 .itemList-title {
-  font-size: 28px;
+  font-size: 0.35rem;
   text-align: center;
-  height: 120px;
-  line-height:120px;
-  margin: 20px auto;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  margin: 0.2rem auto;
 }
 .itemList-title span {
   position: relative;
@@ -236,8 +235,9 @@ export default {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 50px;
-  border-top: 2px solid #e0e0e0;
+  width: 6.4px;
+  width: 0.4rem;
+  border-top: 1px solid #e0e0e0;
   transform: translate3d(-150%, -50%, 0);
   -webkit-transform: translate3d(-150%, -50%, 0);
 }
@@ -245,8 +245,9 @@ export default {
   content: "";
   position: absolute;
   top: 50%;
-  width: 50px;
-  border-top: 2px solid #e0e0e0;
+  width: 6.4px;
+  width: 0.4rem;
+  border-top: 1px solid #e0e0e0;
   left: auto;
   right: 0;
   transform: translate3d(150%, -50%, 0);
@@ -255,18 +256,18 @@ export default {
 .item-list li {
   width: 33.3%;
   float: left;
-
+  margin-top: 0.2rem;
 }
 .item-list-img {
-  width:100px;
-  height:100px;
+  width: 1rem;
+  height: 1rem;
   margin: auto;
 }
 .item-list-name {
-  margin-top:15px;
+  margin-top: 0.15rem;
   text-align: center;
   white-space: nowrap;
-  font-size: 23px;
+  font-size: 0.23rem;
   color: rgba(0, 0, 0, 0.54);
 }
 .item-list-img img {
@@ -274,20 +275,20 @@ export default {
 }
 .more {
   background-color: skyblue;
-  margin:15px auto 0;
+  margin: 0.15rem auto 0;
   text-align: center;
-  height:80px;
-  line-height:80px;
+  height: 0.8rem;
+  line-height: 0.8rem;
   color: #aea38d;
   background-color: #f9f5e6;
 }
 .shop-wrapper .shops-li:last-child {
-  min-height: -webkit-calc(100vh - 200px);
-  min-height: calc(100vh - 200px);
+  min-height: -webkit-calc(100vh - 2rem);
+  min-height: calc(100vh - 2rem);
 }
 img[lazy="loading"] {
-  width: 100px;
-  height: 100px;
+  width: 1rem;
+  height: 1rem;
   margin: auto;
 }
 </style>

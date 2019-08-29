@@ -57,6 +57,6 @@ export default {
     font-size: 20px;
   }
   .router-link-active  {
-    color: #FF483E;
+    color: rgba(237,91,0);
   }
 </style>

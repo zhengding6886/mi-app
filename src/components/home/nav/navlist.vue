@@ -1,5 +1,6 @@
 <template>
   <div class="nav">
+<<<<<<< HEAD
     <div class="all" v-show='status'>全部</div>
     <div class='left'>
       <ul :class="{open:status}">
@@ -11,6 +12,20 @@
         <router-link tag='li' to='/home/house_electric'><span>家电</span></router-link>
         <router-link tag='li' to='/home/5g'><span>5G专场</span></router-link>
         <router-link tag='li' to='/home/round'><span>生活周边</span></router-link>
+=======
+
+    <div class='left'>
+      <ul>
+        <router-link tag='li' to='/home/recommend' >推荐</router-link>
+        <router-link tag='li' to='/home/telephone'>手机</router-link>
+        <router-link tag='li' to='/home/intellect'>智能</router-link>
+        <router-link tag='li' to='/home/television'>电视</router-link>
+        <router-link tag='li' to='/home/book'>笔记本</router-link>
+        <router-link tag='li' to='/home/house_electric'>家电</router-link>
+        <li class="btn"><i @click='status = !status'>^</i></li>
+        <router-link tag='li' to='/home/5g'>5G专场</router-link>
+        <router-link tag='li' to='/home/round'>生活周边</router-link>
+>>>>>>> 81784fa0d6ff419b35ba89e67f2c24c029b94856
       </ul>
     </div>
     <div class="btn"><i @click='status = !status' :class="{tran:status}">︿</i></div>
@@ -30,7 +45,6 @@ export default {
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin-top: 80px;
   background: #f2f2f2;
   border-bottom: 1px solid #999;
 }

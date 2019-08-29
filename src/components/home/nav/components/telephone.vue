@@ -1,8 +1,8 @@
 <template>
   <div class="telephone">
     <mt-swipe :auto="0">
-      <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/939a2f677670d5c852b07ce574a78cae.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
       <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/35a476d5345c149504df838652b3cb07.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
+      <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/939a2f677670d5c852b07ce574a78cae.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
       <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/21f16fa1012ab23de5c6de1dae968d9c.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
     </mt-swipe>
     <div class="list_one">
@@ -60,6 +60,7 @@ export default {
 }
 </script>
 <style scoped>
+
 .telephone{
   min-height:500px;
   background: rgb(230, 231, 251);
