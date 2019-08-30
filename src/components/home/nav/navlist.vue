@@ -1,6 +1,5 @@
 <template>
   <div class="nav">
-
     <div class='left'>
       <ul>
         <router-link tag='li' to='/home/recommend' >推荐</router-link>

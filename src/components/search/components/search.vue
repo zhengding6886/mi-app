@@ -1,15 +1,21 @@
 <template>
   <div class="search">
-    <img @click="goback" class="logo" src="../images/lfarrow.png" alt="">
-    <div class="inp">
-      <!-- <img src="../images/search.png" alt=""> -->
-      <input type="text" name="" id="" placeholder="  搜索商品名称">
+    <div class="left" @click="goback">
+      <i class="iconfont icon-xiangzuojiantou"></i>
     </div>
-    <img class="menu" src="../images/search.png" alt="">
+    <div class="inp">
+      <input type="text" name id placeholder=" 搜索商品名称" />
+    </div>
+    <div class="right" @click="tosearch">
+      <i class="iconfont icon-sousuo"></i>
+    </div>
   </div>
 </template>
 <script>
 export default {
+  data () {
+    return {}
+  },
   methods: {
     goback () {
       this.$router.go(-1)
@@ -18,41 +24,51 @@ export default {
 }
 </script>
 <style scoped>
-  .search {
-    background: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    align-items: center;
-    height:100px;
-    z-index: 999;
-  }
+.search {
+  width: 100%;
+  height: 100px;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.search i {
+  margin: auto;
+  font-size: 48px;
+  color: #929292;
+}
+.left,
+.right {
+  width: 10%;
+  height: 100px;
+  display: flex;
+  text-align: center;
+}
+.inp {
+  background: #fff;
+  width: 80%;
+  border-radius: 10px;
+}
 
-  .logo {
-    width:45px;
-    height:45px;
-  }
+.inp input {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0 20px;
+  outline: 0;
+  font-size: 32px;
+  font-weight: 400;
+  height: 60px;
+  line-height: normal;
+  color: #757575;
+}
 
-  .inp {
-    background: #E8ECF0;
-    flex: 1;
-    margin: 0 30px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-  }
-
-  .inp input {
-    flex: 1;
-    background: transparent;
-    height:60px;
-    font-size:30px;
-    font-weight:400;
-    outline: none;
-  }
-
-  .menu {
-    width:60px;
-    height:60px;
-  }
+.menu {
+  width: 60px;
+  height: 60px;
+}
 </style>

@@ -1,9 +1,13 @@
 <template>
-  <div class="scrollTop" v-show="showTop" @click="toTop">
-    <i class="iconfont icon-zhiding_o"></i>
+  <div class="scrollTop clearfix" v-show="showTop" @click="toTop">
+    <span>
+      <img :src="ad_src" alt />
+    </span>
+    <span><i class="iconfont icon-zhiding_o"></i></span>
   </div>
 </template>
 <script>
+import adSrc from '@/assets/new.gif'
 export default {
   name: 'scroll-top',
   data () {
@@ -11,7 +15,8 @@ export default {
       scrollTop: 0,
       time: 0,
       dParams: 200,
-      scrollState: 0
+      scrollState: 0,
+      ad_src: adSrc
     }
   },
   computed: {
@@ -58,16 +63,27 @@ export default {
 .scrollTop {
   position: fixed;
   width: 80px;
-  height: 80px;
-  line-height: 80px;
   text-align: center;
   right: 40px;
   bottom: 180px;
-  border-radius: 50%;
-  background: rgba(177, 164, 164, 0.5) ;
 }
-.scrollTop i {
+
+.scrollTop span {
+  display: flex;
+  width: 80px;
+  height: 80px;
+}
+.scrollTop span img {
+  width: 80px;
+  height: 80px;
+}
+.scrollTop span i {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
   font-style: normal;
   font-size: 48px;
+  border-radius: 50%;
+  background: rgba(177, 164, 164, 0.5);
 }
 </style>
