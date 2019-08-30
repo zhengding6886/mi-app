@@ -1,17 +1,16 @@
 
 <template>
-    <div id="app">
-
-        <Nav-list></Nav-list>
-        <transition name="fade">
-            <keep-alive>
-              <router-view v-if="this.$route.meta.cache" />
-            </keep-alive>
-        </transition>
-        <transition name="fade">
-            <router-view v-if="!this.$route.meta.cache" />
-        </transition>
-    </div>
+  <div id="app">
+    <Nav-list></Nav-list>
+    <transition name="fade">
+      <keep-alive>
+        <router-view v-if="this.$route.meta.cache" />
+      </keep-alive>
+    </transition>
+    <transition name="fade">
+      <router-view v-if="!this.$route.meta.cache" />
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -37,5 +36,11 @@ body {
 }
 .mint-swipe-indicators .is-active{
  opacity: 0.8;
+}
+#app {
+  width: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 </style>

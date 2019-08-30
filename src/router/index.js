@@ -72,12 +72,16 @@ export default new Router({
         component: Book,
         meta: {
           cache: true,
-          title: '家电'
+          title: '笔记本'
         }
       },
       {
         path: 'house_electric',
-        component: HouseElectric
+        component: HouseElectric,
+        meta: {
+          cache: true,
+          title: '家电'
+        }
       },
       {
         path: '5g',

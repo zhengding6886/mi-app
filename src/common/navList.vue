@@ -20,7 +20,9 @@
     </ul>
   </div>
 </template>
+
 <script>
+
 export default {
   watch: {
     '$route.path' (newvalue, oldvalue) {
@@ -42,28 +44,31 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-  }
-  .nav ul {
-    display: flex;
-  }
+  color: #999;
+}
 
-  .nav ul li {
-    flex: 1;
-    height: 110px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.nav ul {
+  width: 100%;
+  display: flex;
+}
 
-  .nav ul li i {
-    font-style: normal;
-    font-size: 48px;
-  }
-  .nav ul li span{
-    font-size: 20px;
-  }
-  .router-link-active  {
-    color: rgba(237,91,0);
-  }
+.nav ul li {
+  flex: 1;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul li i {
+  font-style: normal;
+  font-size: 48px;
+}
+.nav ul li span {
+  font-size: 20px;
+}
+.router-link-active {
+  color: rgba(237, 91, 0);
+}
 </style>

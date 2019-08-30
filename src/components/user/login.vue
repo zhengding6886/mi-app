@@ -1,5 +1,5 @@
 <template>
-   <div class="register">
+   <div class="login">
      <h2>登录</h2>
      <p><input type="text" placeholder="请输入账号"></p>
      <p><input type="password" placeholder="请输入密码"></p>

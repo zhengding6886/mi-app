@@ -1,7 +1,7 @@
 <template>
-     <div>
-         <p class="left"><a href="#/">我的订单</a></p>
-         <p class="right"><a href="#/">全部订单 ></a></p>
+     <div class="order">
+         <div class="left"><a href="#/">我的订单</a></div>
+         <div class="right"><a href="#/">全部订单 <i class="iconfont  icon-xiangyoujiantou"></i></a></div>
      </div>
 </template>
 <script>
@@ -10,24 +10,30 @@ export default {
 }
 </script>
 <style scoped>
-   div{
+   .order{
        height:80px;
+       line-height:80px;
        background:#fff;
+       text-align: center;
+       font-size: 28px;
+       border-bottom: 2px solid rgba(0,0,0,.15);
    }
-   div p.left{
+   .left{
+       width: 33.3%;
        float: left;
-       margin-left:30px;
        line-height:80px;
    }
-   div p.right{
+   .right{
+       width: 33.3%;
        float: right;
-       margin-right:30px;
-       line-height:80px;
+
    }
    a{
        color: rgba(0,0,0,.87);
        text-decoration: none;
-       font-size:35px;
        font-weight: 400;
+   }
+   i{
+        font-style: normal;
    }
 </style>
