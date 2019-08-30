@@ -6,24 +6,24 @@
       <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/21f16fa1012ab23de5c6de1dae968d9c.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
     </mt-swipe>
     <div class="list_one">
-      <div class="brand">
-        <img :src="phonelist1.titleImg" alt="">
+      <div class="brand" @click="setCookie(brand.goods_id)">
+        <img :src="brand.coverImg" alt="">
         <div class="pro_info">
-          <p><span class="title">{{phonelist1.name}}</span><span class="right">￥<span class="newPrice">{{phonelist1.newprice}}</span><span class="oldPrice">￥{{phonelist1.oldprice}}</span></span></p>
+          <p><span class="title">{{brand.name}}</span><span class="right">￥<span class="newPrice">{{brand.price}}</span><span class="oldPrice">￥{{brand.market_price}}</span></span></p>
           <div class="describe">
-            <span class="detail">{{phonelist1.describe}}</span>
+            <span class="detail">{{brand.short_describe}}</span>
             <a href="javascript:void(0);" class="buy_now">立即购买</a>
           </div>
         </div>
       </div>
       <div class="list">
         <ul>
-          <li v-for="(item,index) in phonelist1.result" :key='index'>
-            <img :src="item.img" alt="">
+          <li v-for="(item,index) in phonelist1" :key='index' @click='setCookie(item.goods_id)'>
+            <img :src="item.coverImg" alt="">
             <div class="info">
               <p class="title">{{item.name}}</p>
-              <p class="describe">{{item.describe}}</p>
-              <p class="price">￥<span class="newprice">{{item.newprice}}</span><span class="oldprice">{{item.oldprice}}</span></p>
+              <p class="describe">{{item.short_describe}}</p>
+              <p class="price">￥<span class="newprice">{{item.price}}</span><span class="oldprice">{{item.market_price}}</span></p>
               <a href="javascript:void(0);" class="buy_now">立即购买</a>
             </div>
           </li>
@@ -41,12 +41,20 @@ Vue.component('mt-swipe-item', SwiperItem)
 export default {
   created () {
     getTelephone().then(res => {
-      this.phonelist1 = res.data
+      this.brand = res.data[0]
+      this.phonelist1 = res.data.slice(1)
     })
   },
   data () {
     return {
+      brand: {},
       phonelist1: []
+    }
+  },
+  methods: {
+    setCookie (id) {
+      document.cookie = `pid=${id}`
+      this.$router.push('/detail')
     }
   }
 }
@@ -164,5 +172,18 @@ export default {
 .telephone .list_one .list ul li .info .price .oldprice{
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.54);
+}
+.telephone .list_one .list ul li .info .buy_now{
+  display: inline-block;
+  width: 208px;
+  height: 60px;
+  line-height: 60px;
+  background: #ea625b;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 </style>

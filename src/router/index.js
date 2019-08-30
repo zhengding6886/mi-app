@@ -16,6 +16,7 @@ import Book from '@/components/home/nav/components/book'
 import HouseElectric from '@/components/home/nav/components/House_Electric'
 import FiveG from '@/components/home/nav/components/5g'
 import Round from '@/components/home/nav/components/round'
+import detail from '@/common/detail'
 
 Vue.use(Router)
 
@@ -34,62 +35,63 @@ export default new Router({
       cache: true,
       title: '首页'
     },
-    children: [{
-      path: 'recommend',
-      component: Recommend,
-      meta: {
-        cache: true,
-        title: '推荐'
+    children: [
+      {
+        path: 'recommend',
+        component: Recommend,
+        meta: {
+          cache: true,
+          title: '推荐'
+        }
+      },
+      {
+        path: 'telephone',
+        component: Telephone,
+        meta: {
+          cache: true,
+          title: '手机'
+        }
+      },
+      {
+        path: 'intellect',
+        component: Intellect,
+        meta: {
+          cache: true,
+          title: '智能'
+        }
+      },
+      {
+        path: 'television',
+        component: Television,
+        meta: {
+          cache: true,
+          title: '电视'
+        }
+      },
+      {
+        path: 'book',
+        component: Book,
+        meta: {
+          cache: true,
+          title: '笔记本'
+        }
+      },
+      {
+        path: 'house_electric',
+        component: HouseElectric,
+        meta: {
+          cache: true,
+          title: '家电'
+        }
+      },
+      {
+        path: '5g',
+        component: FiveG
+      },
+      {
+        path: 'round',
+        component: Round
       }
-    },
-    {
-      path: 'telephone',
-      component: Telephone,
-      meta: {
-        cache: true,
-        title: '手机'
-      }
-    },
-    {
-      path: 'intellect',
-      component: Intellect,
-      meta: {
-        cache: true,
-        title: '智行'
-      }
-    },
-    {
-      path: 'television',
-      component: Television,
-      meta: {
-        cache: true,
-        title: '电视'
-      }
-    },
-    {
-      path: 'book',
-      component: Book,
-      meta: {
-        cache: true,
-        title: '笔记本'
-      }
-    },
-    {
-      path: 'house_electric',
-      component: HouseElectric,
-      meta: {
-        cache: true,
-        title: '家电'
-      }
-    },
-    {
-      path: '5g',
-      component: FiveG
-    },
-    {
-      path: 'round',
-      component: Round
-    }
     ]
   },
   {
@@ -120,6 +122,15 @@ export default new Router({
     }
   },
   {
+    path: '/detail',
+    name: 'detail',
+    component: detail,
+    meta: {
+      cache: true,
+      title: '详情'
+    }
+  },
+  {
     path: '/search',
     name: 'Search',
     component: Search,
@@ -138,6 +149,7 @@ export default new Router({
     }
   },
   {
+
     path: '/login',
     name: 'Login',
     component: Login,
