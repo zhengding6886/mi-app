@@ -56,7 +56,7 @@ export default new Router({
         component: Intellect,
         meta: {
           cache: true,
-          title: '智行'
+          title: '智能'
         }
       },
       {
@@ -117,11 +117,15 @@ export default new Router({
     }
   },
   {
-<<<<<<< HEAD
     path: '/detail',
     name: 'detail',
-    component: detail
-=======
+    component: detail,
+    meta: {
+      cache: true,
+      title: '详情'
+    }
+  },
+  {
     path: '/search',
     name: 'Search',
     component: Search,
@@ -129,7 +133,8 @@ export default new Router({
       cache: false,
       title: '搜索'
     }
-  }, {
+  },
+  {
     path: '/login',
     name: 'Login',
     component: Login,
@@ -137,7 +142,8 @@ export default new Router({
       cache: false,
       title: '登录'
     }
-  }, {
+  },
+  {
     path: '/register',
     name: 'Register',
     component: Register,
@@ -145,7 +151,6 @@ export default new Router({
       cache: false,
       title: '注册'
     }
->>>>>>> 81784fa0d6ff419b35ba89e67f2c24c029b94856
   }
   ]
 })

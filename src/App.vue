@@ -31,9 +31,9 @@ html,
 body {
     height: 100%;
 }
-
 #app {
     height: 100%;
+
 }
 .mint-swipe-indicators .is-active{
  opacity: 0.8;
