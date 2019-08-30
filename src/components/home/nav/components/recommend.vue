@@ -21,8 +21,6 @@
     </div>
     <!-- 商品列表 -->
     <div class="list_one">
-      <div class="brand" @click="setCookie(brand.goods_id)">
-        <img :src="brand.coverImg" alt />
         <div class="pro_info">
           <p>
             <span class="title">{{brand.name}}</span>

@@ -26,6 +26,7 @@ export default {
 <style>
 @import url("./assets/reset.css");
 @import url("./assets/common.css");
+
 html,
 body {
     height: 100%;
@@ -37,6 +38,7 @@ body {
 .mint-swipe-indicators .is-active{
  opacity: 0.8;
 }
+
 #app {
   width: 100%;
   max-width: 750px;
