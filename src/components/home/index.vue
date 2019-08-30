@@ -1,4 +1,21 @@
 <template>
+<<<<<<< HEAD
+  <div>
+     <!-- 分页列表 -->
+    <catelist></catelist>
+    
+  </div>
+</template>
+
+<script>
+ import catelist from "./components/catelist"
+ export default {
+  components:{
+     catelist
+  }
+}
+</script>>
+=======
   <div id="home">
     <div class="home-header">
       <div class="top-box">
@@ -130,3 +147,4 @@ export default {
   transform: translateX(50%);
 }
 </style>
+>>>>>>> 81784fa0d6ff419b35ba89e67f2c24c029b94856

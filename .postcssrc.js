@@ -10,5 +10,11 @@ module.exports = {
         remUnit: 75,
         exclude: /node_modules/
       }
+<<<<<<< HEAD
+    }
+  }
+  
+=======
   }
 }
+>>>>>>> 81784fa0d6ff419b35ba89e67f2c24c029b94856

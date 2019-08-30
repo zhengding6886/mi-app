@@ -1,4 +1,10 @@
 <template>
+<<<<<<< HEAD
+  <div>分类
+  </div>
+</template>
+ 
+=======
   <div class="category">
     <Header ref="son"></Header>
     <div class="shop">
@@ -295,3 +301,4 @@ img[lazy="loading"] {
   margin: auto;
 }
 </style>
+>>>>>>> 81784fa0d6ff419b35ba89e67f2c24c029b94856
