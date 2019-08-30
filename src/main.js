@@ -7,6 +7,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import 'lib-flexible'
 import VueWechatTitle from 'vue-wechat-title'
+import Router from 'vue-router'
 Vue.config.productionTip = false
 Vue.use(MintUI)
 Vue.use(VueWechatTitle)
@@ -17,6 +18,11 @@ router.beforeEach((to, from, next) => {
   document.title = to.meta.title
   next()
 })
+const originalPush = Router.prototype.push
+Router.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 new Vue({
   el: '#app',
   router,

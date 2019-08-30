@@ -4,22 +4,32 @@
       <i class="iconfont icon-xiangzuojiantou"></i>
     </div>
     <div class="inp">
-      <input type="text" name id placeholder=" 搜索商品名称" />
+      <input type="text" placeholder=" 搜索商品名称" v-model="keysWords" />
     </div>
-    <div class="right" @click="tosearch">
-      <i class="iconfont icon-sousuo"></i>
-    </div>
+    <a class="right" @click="search"><i class="iconfont icon-sousuo"></i>  </a>
   </div>
 </template>
 <script>
 export default {
   data () {
-    return {}
+    return {
+      keysWords: ''
+    }
   },
   methods: {
     goback () {
       this.$router.go(-1)
+    },
+    search () {
+      console.log('000000')
+      this.$router.push({
+        name: 'list',
+        params: {
+          keys: this.keysWords || '0'
+        }
+      })
     }
+
   }
 }
 </script>
@@ -43,14 +53,13 @@ export default {
 }
 .left,
 .right {
-  width: 10%;
+  width: 15%;
   height: 100px;
   display: flex;
-  text-align: center;
 }
 .inp {
   background: #fff;
-  width: 80%;
+  width: 70%;
   border-radius: 10px;
 }
 

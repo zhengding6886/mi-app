@@ -1,19 +1,23 @@
 <template>
   <div>
-    <search></search>
-    <hot></hot>
-    <sort></sort>
+    <searchInput></searchInput>
+    <searchHot></searchHot>
+    <searchSort></searchSort>
   </div>
 </template>
 <script>
-import search from './components/search.vue'
-import hot from './components/hot.vue'
-import sort from './components/sort.vue'
+import searchInput from './components/searchInput.vue'
+import searchHot from './components/searchHot.vue'
+import searchSort from './components/searchSort.vue'
 export default {
   components: {
-    search,
-    hot,
-    sort
+    searchInput,
+    searchHot,
+    searchSort
+  },
+  data () {
+    return {
+    }
   }
 }
 </script>

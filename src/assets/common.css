@@ -106,12 +106,20 @@ i{
     content: "\e64a";
   }
   
+  .icon-weibo:before {
+    content: "\e637";
+  }
+  
   .icon-circle:before {
     content: "\fff";
   }
   
   .icon-sousuo2:before {
     content: "\e614";
+  }
+  
+  .icon-zhifubao:before {
+    content: "\e62e";
   }
   
   .icon-shouye2:before {
@@ -146,6 +154,10 @@ i{
     content: "\e71b";
   }
   
+  .icon-weibo2:before {
+    content: "\e601";
+  }
+  
   .icon-qianbao:before {
     content: "\e604";
   }
@@ -172,6 +184,10 @@ i{
   
   .icon-weixin:before {
     content: "\e620";
+  }
+  
+  .icon-weixin1:before {
+    content: "\e62a";
   }
   
   .icon-yunshu-:before {
@@ -202,12 +218,20 @@ i{
     content: "\e61e";
   }
   
+  .icon-weixin2:before {
+    content: "\e623";
+  }
+  
   .icon-gouwuche2:before {
     content: "\e690";
   }
   
   .icon-shouji:before {
     content: "\e619";
+  }
+  
+  .icon-zhifubao1:before {
+    content: "\e628";
   }
   
   .icon-caidan1:before {
@@ -232,6 +256,10 @@ i{
   
   .icon-fuwu:before {
     content: "\e63a";
+  }
+  
+  .icon-zhifubao2:before {
+    content: "\ea4e";
   }
   
   

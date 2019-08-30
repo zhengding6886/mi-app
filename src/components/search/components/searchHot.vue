@@ -9,7 +9,7 @@
     </div>
     <div class="hot-list clearfix">
       <ul>
-        <li v-for="(item , index) in hot_list" :key="index">{{item.name}}</li>
+        <li v-for="(item , index) in hot_list" :key="index" @click="search(item.name)">{{item.name}}</li>
       </ul>
     </div>
   </div>
@@ -30,7 +30,19 @@ export default {
         { id: 5, name: '全面屏电视E55C' }
       ]
     }
+  },
+  methods: {
+    search (name) {
+      this.$router.push({
+        name: 'list',
+        params: {
+          keys: name || '0'
+        }
+      })
+    }
+
   }
+
 }
 </script>
 
