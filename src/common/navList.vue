@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav" ref='down'>
     <ul>
       <router-link to="/home" tag="li">
         <i class="iconfont icon-shouye1"></i>
@@ -20,7 +20,31 @@
     </ul>
   </div>
 </template>
+
 <script>
+
+export default {
+  watch: {
+    '$route.path' (newvalue, oldvalue) {
+      if (newvalue.indexOf('/detail') !== -1) {
+        console.log(newvalue)
+        this.$refs.down.style = 'display:none'
+      } else {
+        this.$refs.down.style = 'display:block'
+      }
+    }
+  }
+}
+</script>
+<style scoped>
+  .nav {
+    position: fixed;
+    z-index: 999;
+    background: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
 export default {}
 </script>
 <style scoped>

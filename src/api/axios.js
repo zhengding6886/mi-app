@@ -12,3 +12,6 @@ export function getTelephone () {
 export function getList () {
   return axios.get('list')
 }
+export function getParameters () {
+  return axios.get('parameters')
+}
