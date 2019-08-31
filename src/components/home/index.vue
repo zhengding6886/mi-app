@@ -3,7 +3,7 @@
     <div class="home-header">
       <div class="top-box">
         <div class="logo">
-          <img src="./images/mi-logo.png" alt />
+          <img :src="logoSrc" alt />
         </div>
         <router-link to="/search">
           <div class="search">
@@ -29,6 +29,7 @@
 <script>
 import toTop from '@/common/toTop.vue'
 import navList from './nav/navlist'
+import logoSrc from '@/assets/mi-logo.png'
 export default {
   components: {
     navList,
@@ -36,7 +37,8 @@ export default {
   },
   data () {
     return {
-      num: 200
+      num: 200,
+      logoSrc: logoSrc
     }
   }
 }

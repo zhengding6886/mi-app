@@ -36,15 +36,18 @@ export default {
   }
 }
 </script>
+
 <style scoped>
-  .nav {
-    position: fixed;
-    z-index: 999;
-    background: white;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
+.nav {
+  position: fixed;
+  z-index: 999;
+  background: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #999;
+}
+
 .nav ul {
   width: 100%;
   display: flex;

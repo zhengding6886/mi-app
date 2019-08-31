@@ -1,19 +1,23 @@
 <template>
   <div>
-    <!-- 搜索 -->
-  <search></search>
-
-   <!-- 热门搜索 -->
-   <swiper></swiper>
+    <searchInput></searchInput>
+    <searchHot></searchHot>
+    <searchSort></searchSort>
   </div>
 </template>
 <script>
-import search from './components/search.vue'
-import swiper from './components/swiper.vue'
+import searchInput from './components/searchInput.vue'
+import searchHot from './components/searchHot.vue'
+import searchSort from './components/searchSort.vue'
 export default {
   components: {
-    search,
-    swiper
+    searchInput,
+    searchHot,
+    searchSort
+  },
+  data () {
+    return {
+    }
   }
 }
 </script>

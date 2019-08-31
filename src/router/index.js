@@ -5,6 +5,7 @@ import Category from '@/components/category/index.vue'
 import Cart from '@/components/cart/index.vue'
 import Mine from '@/components/mine/index.vue'
 import Search from '@/components/search/index.vue'
+import List from '@/components/search/list.vue'
 import Login from '@/components/user/login.vue'
 import Register from '@/components/user/register.vue'
 import Recommend from '@/components/home/nav/components/recommend'
@@ -139,6 +140,16 @@ export default new Router({
     }
   },
   {
+    path: '/search/list:keys',
+    name: 'list',
+    component: List,
+    meta: {
+      cache: false,
+      title: '搜索列表'
+    }
+  },
+  {
+
     path: '/login',
     name: 'Login',
     component: Login,

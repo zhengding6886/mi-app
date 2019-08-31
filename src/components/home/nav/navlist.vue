@@ -3,7 +3,7 @@
     <div class="all" v-show='status'>全部</div>
     <div class='left'>
       <ul :class="{open:status}">
-        <router-link tag='li' to='/home/recommend' class="router-link-active"><span>推荐</span></router-link>
+        <router-link tag='li' to='/home/recommend' ><span>推荐</span></router-link>
         <router-link tag='li' to='/home/telephone'><span>手机</span></router-link>
         <router-link tag='li' to='/home/intellect'><span>智能</span></router-link>
         <router-link tag='li' to='/home/television'><span>电视</span></router-link>
@@ -13,7 +13,7 @@
         <router-link tag='li' to='/home/round'><span>生活周边</span></router-link>
       </ul>
     </div>
-    <div class="btn"><i @click='status = !status' :class="{tran:status}">︿</i></div>
+    <div class="btn"><i @click='status = !status' :class="{tran:status}" class="iconfont icon-jiantouxia"></i></div>
   </div>
 </template>
 <script>
