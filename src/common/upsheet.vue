@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <div class="top_title">
-        <h4><slot>aaa</slot><slot name='close'></slot></h4>
+        <div class="title"><slot>aaa</slot><slot name='close'></slot></div>
       </div>
       <div class="list">
         <slot name='ul'>
@@ -44,9 +44,10 @@ export default {
     .top_title{
       position: absolute;
       width: 90%;
-      h4{
+      .title{
         position: relative;
         line-height: 100px;
+        min-height: 100px;
         text-align: center;
         font-size: 36px;
         font-weight: normal;

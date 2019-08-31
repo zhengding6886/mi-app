@@ -2,9 +2,9 @@
   <div class="recommend">
     <!-- 轮播图 -->
     <div class="swipe">
-      <mt-swipe :auto="3000" :continuous="true" >
+      <mt-swipe :auto="3000" :continuous="true">
         <mt-swipe-item v-for="(item,index) in swiperArr" :key="index">
-          <img  :src="item.img" alt />
+          <img :src="item.img" alt />
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -21,14 +21,11 @@
     </div>
     <!-- 商品列表 -->
     <div class="list_one">
+      <div class="brand" @click="setCookie(brand.goods_id)">
+        <img :src="brand.coverImg" alt />
         <div class="pro_info">
           <p>
-            <span class="title">{{brand.name}}</span>
-            <span class="right">
-              ￥
-              <span class="newPrice">{{brand.price}}</span>
-              <span class="oldPrice">￥{{brand.market_price}}</span>
-            </span>
+            <span class="title">{{brand.name}}</span><span class="right">￥<span class="newPrice">{{brand.price}}</span><span class="oldPrice">￥{{brand.market_price}}</span></span>
           </p>
           <div class="describe">
             <span class="detail">{{brand.short_describe}}</span>
@@ -39,7 +36,7 @@
       <div class="list">
         <ul>
           <li v-for="(item,index) in phonelist1" :key="index" @click="setCookie(brand.goods_id)">
-            <img  v-lazy="item.coverImg" alt />
+            <img v-lazy="item.coverImg" alt />
             <div class="info">
               <p class="title">{{item.name}}</p>
               <p class="describe">{{item.short_describe}}</p>
@@ -153,17 +150,17 @@ export default {
   min-height: 500px;
   background: rgb(230, 231, 251);
 }
-.swipe{
+.swipe {
   width: 100%;
   height: auto;
   background: #fff;
 }
-.mint-swipe{
-   height: 375px;
-   width: 100%;
+.mint-swipe {
+  height: 375px;
+  width: 100%;
 }
-.mint-swipe img{
-   width: 100%;
+.mint-swipe img {
+  width: 100%;
 }
 .catelist {
   width: 100%;
@@ -288,7 +285,7 @@ export default {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.54);
 }
-.list_one .list ul li .info .buy_now{
+.list_one .list ul li .info .buy_now {
   display: inline-block;
   width: 208px;
   height: 60px;
