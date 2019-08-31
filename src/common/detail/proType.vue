@@ -50,24 +50,29 @@
         </li>
         <li>
           <p class="name">意外保护<i class="icon yiwen">?</i><span class="value">{{tip}}</span></p>
-          <span class="choose" :class="{selected:option[0].select}" @click="changeOption(0)">意外保障服务<i class="price">299元</i></span>
-          <span class="choose" :class="{selected:option[1].select}" @click="changeOption(1)">碎屏保障服务<i class="price">159元</i></span>
-          <p class="agree" v-if='agree'><i class="icon dui">√</i>我已阅读 <span style="color:#ff6700">服务条款 | 常见问题</span></p>
+          <!-- <span class="choose">意外保障服务<i class="price">299元</i></span>
+          <span class="choose">碎屏保障服务<i class="price">159元</i></span> -->
+          <mt-checklist
+            v-model="value"
+            :options="options" @change="choose">
+          </mt-checklist>
+          <p class="agree"><i class="icon dui">√</i>我已阅读 <span style="color:#ff6700">服务条款 | 常见问题</span></p>
         </li>
         <li>
           <p class="name">延长保修<i class="icon yiwen">?</i><span class="value">{{tip2}}</span></p>
-          <span class="choose" :class="{selected:option[2].select}" @click="changeOption(2)">延长保修服务<i class="price">99元</i></span>
-          <p class="agree" v-if='option[2].select'><i class="icon dui">√</i>我已阅读 <span style="color:#ff6700">服务条款 | 常见问题</span></p>
+          <span class="choose">延长保修服务<i class="price">99元</i></span>
+          <p class="agree"><i class="icon dui">√</i>我已阅读 <span style="color:#ff6700">服务条款 | 常见问题</span></p>
         </li>
       </ul>
+      <a href="javascript:void(0)" slot='ok' class='close' @click="changeStatus">完成</a>
     </upsheet>
   </div>
 </template>
 <script>
 import upsheet from '@/common/upsheet'
-import {Radio} from 'mint-ui'
+import {Checklist} from 'mint-ui'
 import Vue from 'vue'
-Vue.component(Radio)
+Vue.component('mt-checklist', Checklist)
 export default {
   components: {
     upsheet
@@ -79,29 +84,23 @@ export default {
       tip: '',
       tip2: '',
       agree: false,
-      option: [
+      value: [],
+      options: [
         {
-          num: 1,
-          name: '意外保障服务',
-          value: '手机意外摔落/进水/碾压等损坏',
-          select: false
+          label: '意外保障服务',
+          value: '手机意外摔落/进水/碾压等损坏'
         },
         {
-          num: 2,
-          name: '碎屏保障服务',
-          value: '手机意外碎屏',
-          select: false
-        },
-        {
-          num: 3,
-          name: '延长保修服务',
-          value: '厂保延一年，性能故障面给维修',
-          select: false
+          label: '碎屏保障服务',
+          value: '手机意外碎屏'
         }
       ]
     }
   },
   methods: {
+    choose (el) {
+      this.tip = this.value[0]
+    },
     changeStatus () {
       this.status = !this.status
     },
@@ -114,21 +113,12 @@ export default {
         return
       }
       this.number--
-    },
-    changeOption (index) {
-      this.option[index].select = !this.option[index].select
-      this.agree = this.option[index].select
-      if (this.option[index].select) {
-        this.tip = this.option[index].value
-        if (index === 2) {
-          this.tip2 = this.option[2].value
-        }
-      }
     }
   }
 }
 </script>
 <style lang="less" scoped>
+@import url('../../../node_modules/mint-ui/lib/style.css');
 .product_info_choose_version{
   padding: 0 20px;
   .choose_list{
@@ -169,6 +159,17 @@ export default {
 }
 span.close{
   margin-top: 20px;
+}
+a.close{
+  display: block;
+  width: 90%;
+  height: 80px;
+  border-radius: 40px;
+  background: #ff6700;
+  color: #fff;
+  margin: 0 auto;
+  line-height: 80px;
+  font-size: 38px;
 }
 .top_title .title .top{
   margin-bottom: 20px;
@@ -317,6 +318,12 @@ ul{
         padding-left: 5px;
         padding-top: 3px;
       }
+    }
+  }
+  .mint-radiolist{
+    display: flex;
+    .mint-cell{
+      flex: 1;
     }
   }
 }

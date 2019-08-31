@@ -24,3 +24,6 @@ export function getComment () {
 export function getRecommends () {
   return axios.get('recommend')
 }
+export function getCartNum () {
+  return axios.get('cartNum')
+}

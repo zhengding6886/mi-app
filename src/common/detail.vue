@@ -73,6 +73,7 @@
       <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png?w=1080&h=427" alt="">
     </div>
     <Recommend></Recommend>
+    <Footer></Footer>
   </div>
 
 </template>
@@ -89,6 +90,7 @@ import productType from '@/common/detail/proType'
 import Relate from '@/common/detail/relate'
 import Comment from '@/common/detail/comment'
 import Recommend from '@/common/detail/recommend'
+import Footer from '@/common/detail/bottom'
 
 Vue.component('mt-swipe', Swipe)
 Vue.component('mt-swipe-item', SwipeItem)
@@ -99,7 +101,8 @@ export default {
     productType,
     Relate,
     Comment,
-    Recommend
+    Recommend,
+    Footer
   },
   data () {
     return {
@@ -159,7 +162,6 @@ export default {
   },
   wacth: {
     width (val) {
-      // this.width = val
       this.$nextTick(() => {
         this.personScroll()
       })
