@@ -1,7 +1,7 @@
 <template>
   <div id="header" :style="{backgroundImage: 'url(' + userBgImgSrc + ')' }">
     <div class="user-img">
-      <img :src="userImgSrc" alt />
+      <span><img :src="userImgSrc" alt /></span>
     </div>
     <div class="user-name" @click="toast">{{u_name}}</div>
   </div>
@@ -19,7 +19,11 @@ export default {
       u_name: '登录/注册'
     }
   },
-  name: 'h',
+  mounted () {
+    let userInfo = this.getStorge()
+    this.userImgSrc = userInfo[0].uHeaderSrc
+    this.u_name = userInfo[0].uName
+  },
   methods: {
     toast () {
       MessageBox({
@@ -52,7 +56,14 @@ export default {
   display: flex;
   float: left;
 }
-#header .user-img img {
+#header .user-img span{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow:hidden;
+  margin: auto;
+}
+#header .user-img span img {
   width: 100px;
   height: 100px;
   margin: auto;

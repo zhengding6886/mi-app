@@ -15,3 +15,6 @@ export function getList () {
 export function getParameters () {
   return axios.get('parameters')
 }
+export function getLogin () {
+  return axios.post('user/login')
+}

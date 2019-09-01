@@ -16,6 +16,7 @@ export default {
       keysWords: ''
     }
   },
+
   methods: {
     goback () {
       this.$router.go(-1)
@@ -25,7 +26,7 @@ export default {
       this.$router.push({
         name: 'list',
         params: {
-          keys: this.keysWords || '0'
+          keys: this.keysWords || '小米9'
         }
       })
     }

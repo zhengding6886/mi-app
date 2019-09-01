@@ -31,6 +31,7 @@ import toTop from '@/common/toTop.vue'
 import navList from './nav/navlist'
 import logoSrc from '@/assets/mi-logo.png'
 export default {
+
   components: {
     navList,
     toTop

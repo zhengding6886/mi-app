@@ -4,10 +4,10 @@ import Home from '@/components/home/index.vue'
 import Category from '@/components/category/index.vue'
 import Cart from '@/components/cart/index.vue'
 import Mine from '@/components/mine/index.vue'
+import Set from '@/components/mine/set.vue'
 import Search from '@/components/search/index.vue'
 import List from '@/components/search/list.vue'
 import Login from '@/components/user/login.vue'
-import Register from '@/components/user/register.vue'
 import Recommend from '@/components/home/nav/components/recommend'
 import Telephone from '@/components/home/nav/components/telephone'
 import Intellect from '@/components/home/nav/components/intellect'
@@ -41,7 +41,8 @@ export default new Router({
         component: Recommend,
         meta: {
           cache: true,
-          title: '推荐'
+          title: '推荐',
+          footShow: true
         }
       },
       {
@@ -49,7 +50,8 @@ export default new Router({
         component: Telephone,
         meta: {
           cache: true,
-          title: '手机'
+          title: '手机',
+          footShow: true
         }
       },
       {
@@ -57,7 +59,8 @@ export default new Router({
         component: Intellect,
         meta: {
           cache: true,
-          title: '智能'
+          title: '智能',
+          footShow: true
         }
       },
       {
@@ -65,7 +68,8 @@ export default new Router({
         component: Television,
         meta: {
           cache: true,
-          title: '电视'
+          title: '电视',
+          footShow: true
         }
       },
       {
@@ -73,7 +77,8 @@ export default new Router({
         component: Book,
         meta: {
           cache: true,
-          title: '笔记本'
+          title: '笔记本',
+          footShow: true
         }
       },
       {
@@ -81,7 +86,8 @@ export default new Router({
         component: HouseElectric,
         meta: {
           cache: true,
-          title: '家电'
+          title: '家电',
+          footShow: true
         }
       },
       {
@@ -100,7 +106,8 @@ export default new Router({
     component: Category,
     meta: {
       cache: true,
-      title: '分类'
+      title: '分类',
+      footShow: true
     }
   },
   {
@@ -109,7 +116,8 @@ export default new Router({
     component: Cart,
     meta: {
       cache: true,
-      title: '购物车'
+      title: '购物车',
+      footShow: true
     }
   },
   {
@@ -117,8 +125,19 @@ export default new Router({
     name: 'Mine',
     component: Mine,
     meta: {
-      cache: true,
-      title: '我的'
+      cache: false,
+      title: '我的',
+      footShow: true
+    }
+  },
+  {
+    path: '/mine/set',
+    name: 'Set',
+    component: Set,
+    meta: {
+      cache: false,
+      title: '设置',
+      footShow: false
     }
   },
   {
@@ -127,7 +146,8 @@ export default new Router({
     component: detail,
     meta: {
       cache: true,
-      title: '详情'
+      title: '详情',
+      footShow: true
     }
   },
   {
@@ -135,8 +155,9 @@ export default new Router({
     name: 'Search',
     component: Search,
     meta: {
-      cache: false,
-      title: '搜索'
+      cache: true,
+      title: '搜索',
+      footShow: false
     }
   },
   {
@@ -144,8 +165,9 @@ export default new Router({
     name: 'list',
     component: List,
     meta: {
-      cache: false,
-      title: '搜索列表'
+      cache: true,
+      title: '搜索列表',
+      footShow: false
     }
   },
   {
@@ -155,16 +177,8 @@ export default new Router({
     component: Login,
     meta: {
       cache: false,
-      title: '登录'
-    }
-  },
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register,
-    meta: {
-      cache: false,
-      title: '注册'
+      title: '登录',
+      footShow: false
     }
   }
   ]
