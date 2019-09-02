@@ -33,7 +33,7 @@ export default {
       this.$router.push({
         name: 'list',
         params: {
-          keys: name || '0'
+          keys: name || ''
         }
       })
     }

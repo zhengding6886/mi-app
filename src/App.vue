@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
-    <Nav-list></Nav-list>
+    <Nav-list v-if="$route.meta.footShow"></Nav-list>
       <keep-alive>
         <router-view v-if="this.$route.meta.cache" />
       </keep-alive>

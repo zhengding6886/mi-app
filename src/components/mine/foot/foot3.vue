@@ -10,7 +10,7 @@
           <i class="iconfont icon-xiangyoujiantou"></i>
         </span>
       </router-link>
-      <router-link to="/" tag="li">
+      <router-link to="/mine/set" tag="li">
         <span class="s-left s-shezhi">
           <i class="iconfont icon-shezhi"></i>
         </span>

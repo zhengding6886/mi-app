@@ -20,7 +20,7 @@ export default {
       data: 10
     }
   },
-  created () {},
+
   mounted () {
     this.getParams()
   },
