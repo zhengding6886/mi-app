@@ -24,10 +24,16 @@
 <script>
 
 export default {
+  mounted () {
+    if (this.$route.path.indexOf('detail') !== -1 || this.$route.path.indexOf('cart') !== -1) {
+      this.$refs.down.style = 'display:none'
+    } else {
+      this.$refs.down.style = 'display:block'
+    }
+  },
   watch: {
-    '$route.path' (newvalue, oldvalue) {
-      if (newvalue.indexOf('/detail') !== -1) {
-        console.log(newvalue)
+    '$route' () {
+      if (this.$route.path.indexOf('detail') !== -1 || this.$route.path.indexOf('cart') !== -1) {
         this.$refs.down.style = 'display:none'
       } else {
         this.$refs.down.style = 'display:block'

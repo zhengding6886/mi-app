@@ -31,6 +31,7 @@
         <p class="price">￥<span class="new">{{data.price}}</span><span class="old">￥{{data.market_price}}</span></p>
       </div>
     </div>
+    <!-- 参数列表 -->
     <div class="pro_parameter">
       <div class="person-wrap" ref="personWrap">
         <ul class="person-list" ref="personTab">
@@ -43,6 +44,7 @@
           </li>
         </ul>
       </div>
+    <!-- 参数弹框 -->
     <upsheet v-if='status'>
       <slot>关键参数</slot><span name='close' @click="status = !status">✗</span>
           <ul slot='ul'>
@@ -54,7 +56,26 @@
       <button slot='ok' @click="status = !status">完成</button>
     </upsheet>
     </div>
+    <div class="img">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/77c759393aa0961553b7bae2694832fa.jpg?f=webp&w=1080&h=540&bg=194B4A" alt="">
+    </div>
+    <product-type></product-type>
+    <Relate></Relate>
+    <Comment></Comment>
+    <div class="detailImages">
+      <img src="https://i8.mifile.cn/v1/a1/52a6f116-fd19-4591-c36a-65d6ea6d310c.webp?w=1080&h=1322&bg=232637" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/a9bbf426-e131-4ae1-a491-3ece0a43dcde.webp?w=1080&h=851&bg=2B2F52" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/80273843-80c5-7416-1a24-2ddce076863e.webp?w=1080&h=1101&bg=181E25" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/2c712743-c6d9-8253-2d6c-a85b180018f4.webp?w=1080&h=828&bg=56506E" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/3e1e9b46-942b-4d6f-9de6-46a7b075e06e.webp?w=1080&h=960&bg=090D13" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/c02b92bd-b423-cec1-ae73-2ab595fa4368.webp?w=1080&h=956&bg=2F4250" alt="">
+      <img src="https://i8.mifile.cn/v1/a1/4a5dd6f2-46a4-a9ca-b5c0-eae091aac8ac.webp?w=1080&h=1009&bg=101925" alt="">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fc88fd153c1da1138fd621e00137d3e2.png?w=1080&h=427" alt="">
+    </div>
+    <Recommend></Recommend>
+    <Footer></Footer>
   </div>
+
 </template>
 <script>
 import axios from 'axios'
@@ -65,13 +86,23 @@ import { setInterval, clearInterval } from 'timers'
 import Bscroll from 'better-scroll'
 import {getParameters} from '@/api/axios.js'
 import upsheet from '@/common/upsheet'
+import productType from '@/common/detail/proType'
+import Relate from '@/common/detail/relate'
+import Comment from '@/common/detail/comment'
+import Recommend from '@/common/detail/recommend'
+import Footer from '@/common/detail/bottom'
 
 Vue.component('mt-swipe', Swipe)
 Vue.component('mt-swipe-item', SwipeItem)
 
 export default {
   components: {
-    upsheet
+    upsheet,
+    productType,
+    Relate,
+    Comment,
+    Recommend,
+    Footer
   },
   data () {
     return {
@@ -126,12 +157,11 @@ export default {
     })
     // 设置秒杀时间
     this.time = setInterval(() => {
-      this.leftTime = TimeDown('2019-09-01 23:59')
+      this.leftTime = TimeDown('2019-09-20 23:59')
     }, 1000)
   },
   wacth: {
     width (val) {
-      // this.width = val
       this.$nextTick(() => {
         this.personScroll()
       })
@@ -150,14 +180,18 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.detail{
+  padding-bottom: 210px;
+}
 /** 使用less 编写的样式*/
 header{
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 0;
   width: 100%;
   height: 100px;
   z-index: 30;
+  background: rgba(255,255,255,0.6);
   .top{
     border-radius: 50%;
     background: rgba(0,0,0,0.3);
@@ -236,7 +270,7 @@ header{
 .pro_parameter {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 300px;
+  margin-bottom: 20px;
   .person-wrap{
     width: 100%;
     height: 100%;
@@ -286,5 +320,19 @@ header{
     }
   }
 }
-
+.img {
+  padding: 20px;
+  img{
+    width:100%;
+    border-radius: 10px;
+  }
+}
+.detailImages{
+  width: 100%;
+  img{
+    width: 100%;
+    outline-width:0px;
+    vertical-align:top;
+  }
+}
 </style>

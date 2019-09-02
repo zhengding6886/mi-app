@@ -15,6 +15,18 @@ export function getList () {
 export function getParameters () {
   return axios.get('parameters')
 }
+export function getRelate () {
+  return axios.get('relate')
+}
+export function getComment () {
+  return axios.get('comments')
+}
+export function getRecommends () {
+  return axios.get('recommend')
+}
+export function getCartNum () {
+  return axios.get('cartNum')
+
 export function getLogin () {
   return axios.post('user/login')
 }
