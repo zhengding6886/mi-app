@@ -145,10 +145,11 @@ export default {
   created () {
     // 根据 pid 请求商品数据
     this.pid = document.cookie.split('=')[1]
-    axios.get(`http://127.0.0.1:3000/api/detail?pid=${this.pid}`).then(response => {
+    axios.get(`http://localhost:3000/api/detail?pid=${this.pid}`).then(response => {
       this.data = response.data
       this.$refs.description.innerHTML = this.data.description
     })
+
     getParameters().then(res => {
       this.parameters = res.data
       this.length = this.parameters.list.length

@@ -26,7 +26,7 @@ export function getRecommends () {
 }
 export function getCartNum () {
   return axios.get('cartNum')
-
+}
 export function getLogin () {
   return axios.post('user/login')
 }

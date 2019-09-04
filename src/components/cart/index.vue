@@ -2,11 +2,13 @@
   <div class="cart">
     <Header ref="son"></Header>
     <Cart></Cart>
+    <Recommend></Recommend>
   </div>
 </template>
 <script>
 import Header from '@/common/header.vue'
 import Cart from '@/components/cart/components/cart'
+import Recommend from '@/common/detail/recommend'
 export default {
 
   mounted () {
@@ -14,7 +16,8 @@ export default {
   },
   components: {
     Header,
-    Cart
+    Cart,
+    Recommend
   }
 
 }

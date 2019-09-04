@@ -1,189 +1,117 @@
 <template>
-  <div class="telephone">
-    <mt-swipe :auto="0">
-      <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/35a476d5345c149504df838652b3cb07.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/939a2f677670d5c852b07ce574a78cae.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/21f16fa1012ab23de5c6de1dae968d9c.jpg?thumb=1&w=720&h=360" alt=""></mt-swipe-item>
-    </mt-swipe>
-    <div class="list_one">
-      <div class="brand" @click="setCookie(brand.goods_id)">
-        <img :src="brand.coverImg" alt="">
-        <div class="pro_info">
-          <p><span class="title">{{brand.name}}</span><span class="right">￥<span class="newPrice">{{brand.price}}</span><span class="oldPrice">￥{{brand.market_price}}</span></span></p>
-          <div class="describe">
-            <span class="detail">{{brand.short_describe}}</span>
-            <a href="javascript:void(0);" class="buy_now">立即购买</a>
-          </div>
-        </div>
-      </div>
-      <div class="list">
+  <div id="app">
+      <p>
+      <mt-swipe :auto="4000">
+        <mt-swipe-item v-for="(item,i) in mag" :key="i"><img :src="item.img" alt=""></mt-swipe-item>
+      </mt-swipe>
+      </p>
+    <div class="nav_list">
         <ul>
-          <li v-for="(item,index) in phonelist1" :key='index' @click='setCookie(item.goods_id)'>
-            <img :src="item.coverImg" alt="">
-            <div class="info">
-              <p class="title">{{item.name}}</p>
-              <p class="describe">{{item.short_describe}}</p>
-              <p class="price">￥<span class="newprice">{{item.price}}</span><span class="oldprice">{{item.market_price}}</span></p>
-              <a href="javascript:void(0);" class="buy_now">立即购买</a>
-            </div>
-          </li>
+            <li v-for="(item,i) in list" :key="i"><img :src="item.img" alt=""></li>
         </ul>
-      </div>
+    </div>
+    <div class="houbuy">
+        <img src="http://i8.mifile.cn/v1/a1/72411ddf-3df9-8d3a-7e5d-9429991710dc.webp" alt="">
+    </div>
+    <div class="kd">
+        <img  src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c25c68694e064f1eda1c207ad481f767.jpg?thumb=1&w=720&h=112" alt="">
+    </div>
+    <footList></footList>
+    <div class="gd"><img src="http://i8.mifile.cn/v1/a1/d6a387d1-3b5e-d81b-0c8b-3d0133d0bb5c.webp" alt="">
     </div>
   </div>
 </template>
 <script>
-import {getTelephone} from '@/api/axios'
-import { Swipe, SwiperItem } from 'mint-ui'
-import Vue from 'vue'
-Vue.component('mt-swipe', Swipe)
-Vue.component('mt-swipe-item', SwiperItem)
-export default {
-  created () {
-    getTelephone().then(res => {
-      this.brand = res.data[0]
-      this.phonelist1 = res.data.slice(1)
-    })
+// 导入列表组件
+import footList from './footList/footList'
+export default{
+  components: {
+    footList
   },
   data () {
     return {
-      brand: {},
-      phonelist1: []
-    }
-  },
-  methods: {
-    setCookie (id) {
-      document.cookie = `pid=${id}`
-      this.$router.push('/detail')
+      mag: [
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c290d666a71f87a57f944e7880fc9af7.jpg'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b72b57cba21c97f0b6a43f672d55b504.jpg'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/76de159e8d461a9f657101981242ace1.jpg'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3674af7b790200df54f7c83c6a53e9b2.jpg'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1202a6786bda58920ef073fac0b1a74d.jpg'}
+      ],
+      list: [
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e47dad0c224065a73a4c722eeaf1b8e1.jpg?thumb=1&w=144&h=152'},
+        {img: 'http://i8.mifile.cn/v1/a1/eddc5967-7f37-bf45-72d9-de0db438658b.webp'},
+        {img: 'http://i8.mifile.cn/v1/a1/8d73dc73-3a27-1587-6c43-47998c859a48.webp'},
+        {img: 'http://i8.mifile.cn/v1/a1/afe66888-30af-d023-ebbe-6ed7e4607167.webp'},
+        {img: 'http://i8.mifile.cn/v1/a1/3ad80cd6-0188-1c0a-95d3-aeaa58ede247.webp'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b9b8b8e686044afb2585e78a03ee96b6.png?thumb=1&w=144&h=152'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b3304e52970aa972c4f4ccd6eb424ad7.png?thumb=1&w=144&h=152'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fed94691e4b361f237d411c3f687c2d4.png?thumb=1&w=144&h=152'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a2bc35b6be2ab377bfc7e8fddeaa54c5.png?thumb=1&w=144&h=152'},
+        {img: 'http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d41a54c825db28e47888db6bd61349de.png?thumb=1&w=144&h=152'}
+      ]
     }
   }
 }
 </script>
 <style scoped>
-
-.telephone{
-  min-height:500px;
-  background: rgb(230, 231, 251);
-}
-/*轮播图*/
-.mint-swipe{
-  height: 360px;
-  margin-bottom: 10px;
-}
-.mint-swipe img{
-  width: 100%;
-}
-.telephone .list_one{
-  padding: 0 12px;
-  box-sizing: border-box;
-}
-.telephone .list_one .brand{
-  width: 100%;
-  margin-bottom: 20px;
-}
-.telephone .list_one .brand img{
-  width:100%;
-}
-.telephone .list_one .brand .pro_info{
-  background: #fff;
-  padding: 20px 28px;
-  margin-top: 0;
-  box-sizing: border-box;
-}
-.telephone .list_one .pro_info .title{
-  font-size: 32px;
-}
-.telephone .list_one .right{
-  float: right;
-  font-size: 28px;
-  color: #ea625b;
-}
-.telephone .list_one .pro_info .right .newPrice{
-  font-size: 32px;
-  margin-right: 10px;
-}
-.telephone .list_one .pro_info .right .oldPrice{
-  font-size: 24px;
-  text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.54);
-}
-.telephone .list_one .pro_info .describe{
-  padding-bottom: 20px;
-  padding-top: 10px;
-}
-.telephone .list_one .pro_info .detail{
-  line-height: 30px;
-  display: inline-block;
-  margin-top: 20px;
-  color: rgba(0, 0, 0, 0.54);
-}
-.telephone .list_one .pro_info .buy_now{
-  display: inline-block;
-  width: 208px;
-  height: 60px;
-  line-height: 60px;
-  background: #ea625b;
-  color: #fff;
-  text-align: center;
-  font-size: 30px;
-  border-radius: 6px;
-  float: right;
-}
-
-.telephone .list_one .list{
-  width: 100%;
-}
-.telephone .list_one .list ul{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.telephone .list_one .list ul li{
-  width: 48%;
-  margin-bottom: 20px;
-}
-.telephone .list_one .list ul li img{
-  width: 100%;
-}
-.telephone .list_one .list ul li .info{
-  background: #fff;
-  text-align: center;
-}
-.telephone .list_one .list ul li .info .title{
-  font-size: 30px;
-  line-height: 50px;
-}
-.telephone .list_one .list ul li .info .describe{
-  line-height: 30px;
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.54);
-}
-.telephone .list_one .list ul li .info .price{
-  font-size: 28px;
-  color: #ea625b;
-}
-.telephone .list_one .list ul li .info .price .newprice{
-  font-size: 30px;
-  margin-right: 10px;
-}
-.telephone .list_one .list ul li .info .price .oldprice{
-  text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.54);
-}
-.telephone .list_one .list ul li .info .buy_now{
-  display: inline-block;
-  width: 208px;
-  height: 60px;
-  line-height: 60px;
-  background: #ea625b;
-  color: #fff;
-  text-align: center;
-  font-size: 30px;
-  border-radius: 6px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+ #app{
+       width: 100%;
+        background:rgb(239,241,243);
+       /* height:384px; */
+       /* border:1px solid red; */
+   }
+   #app p{
+        width: 100%;
+       height:384px;
+   }
+   #app p img{
+       width:100%;
+       height:384px;
+   }
+   div.nav_list{
+       width: 100%;
+       height:340px;
+       /* background:yellow; */
+   }
+   div.nav_list ul{
+    width: 100%;
+    height:100%;
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+   }
+     div.nav_list ul li{
+         width:20%;
+         height:160px;
+     }
+   div.nav_list ul li img{
+       width:100%;
+       height:160px;
+   }
+   div.houbuy{
+       width:100%;
+       height:120px;
+   }
+   div.houbuy img{
+       width:100%;
+       height:120px;
+   }
+   div.kd {
+       margin-top:20px;
+       width: 100%;
+         height:112px;
+   }
+   div.kd img{
+         width: 100%;
+         height:112px;
+   }
+   div.gd{
+      width:100%;
+      height:86px;
+      margin-top: 80px;
+   }
+   div.gd img{
+      width:100%;
+      height:86px;
+   }
 </style>
